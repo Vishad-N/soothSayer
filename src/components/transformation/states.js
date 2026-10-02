@@ -1,0 +1,51 @@
+// One entry per card. Any number of states works: the timeline is built from this array.
+export const STATES = [
+  {
+    id: 'raw-data',
+    number: '01',
+    rail: 'RAW DATA',
+    title: 'Raw data',
+    body: 'Thousands of disconnected signals. Noisy, tangled and difficult to interpret.',
+    meta: 'Complexity detected',
+  },
+  {
+    id: 'pattern',
+    number: '02',
+    rail: 'PATTERN',
+    title: 'Pattern',
+    body: 'Structure emerges. Related behaviour begins to line up.',
+    meta: 'Structure emerging',
+  },
+  {
+    id: 'signal',
+    number: '03',
+    rail: 'SIGNAL',
+    title: 'Signal',
+    body: 'One route stands out from the noise: the signal worth acting on.',
+    meta: 'Signal isolated',
+  },
+  {
+    id: 'intelligence',
+    number: '04',
+    rail: 'INTELLIGENCE',
+    title: 'Intelligence',
+    body: 'The whole system reorganizes around that signal.',
+    meta: 'System aligned',
+  },
+  {
+    id: 'action',
+    number: '05',
+    rail: 'ACTION',
+    title: 'Action',
+    body: 'Intelligence flows into the workflows where decisions are made.',
+    meta: 'Workflows activated',
+  },
+  {
+    id: 'impact',
+    number: '06',
+    rail: 'IMPACT',
+    title: 'Impact',
+    body: 'Decisions turn into measurable business outcomes.',
+    meta: 'Outcomes measured',
+  },
+]

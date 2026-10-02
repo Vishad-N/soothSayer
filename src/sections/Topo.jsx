@@ -1,36 +1,26 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import ParticleText from '../components/ParticleText.jsx'
-import { sectionProgress } from '../lib/utils.js'
+import CardStage from '../components/transformation/CardStage.jsx'
+import { DESKTOP_FRAGMENTS, MOBILE_FRAGMENTS } from '../components/transformation/fragments.js'
+import { STATES } from '../components/transformation/states.js'
+import { useTransformationScroll } from '../components/transformation/useTransformationScroll.js'
 
-const STAGES = [
-  { rail: 'RAW DATA', label: '01 · Raw data', body: 'Thousands of disconnected signals: noisy, tangled, easy to ignore.' },
-  { rail: 'PATTERN', label: '02 · Pattern', body: 'Structure emerges. Related behaviour begins to line up.' },
-  { rail: 'SIGNAL', label: '03 · Signal', body: 'One route stands out from the noise: the signal worth acting on.' },
-  { rail: 'INTELLIGENCE', label: '04 · Intelligence', body: 'The whole system reorganizes around that signal.' },
-  { rail: 'ACTION', label: '05 · Action', body: 'Intelligence flows into the workflows where decisions are made.' },
-  { rail: 'IMPACT', label: '06 · Impact', body: 'Decisions turn into measurable business outcomes.' },
-]
-
-// Tall sticky section: scroll progress steps through the six stages.
+// Pinned, scroll-scrubbed section: one card that inflates, bursts and is rebuilt as the
+// next state. All motion lives in useTransformationScroll; this file is structure only.
 export default function Topo() {
   const sectionRef = useRef(null)
-  const [stage, setStage] = useState(0)
+  const pinRef = useRef(null)
+  const stageRef = useRef(null)
+  const railRef = useRef(null)
+  const liveRef = useRef(null)
+  // fixed at mount so shard count never changes mid-scroll
+  const [fragments] = useState(() => (window.innerWidth < 760 ? MOBILE_FRAGMENTS : DESKTOP_FRAGMENTS))
 
-  useEffect(() => {
-    const onScroll = () => {
-      const progress = sectionProgress(sectionRef.current)
-      setStage(Math.min(STAGES.length - 1, Math.floor(progress * STAGES.length)))
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const current = STAGES[stage]
+  useTransformationScroll({ sectionRef, pinRef, stageRef, railRef, liveRef, fragments })
 
   return (
     <section className="sec" id="topo" ref={sectionRef} aria-labelledby="h-t">
-      <div className="stick">
+      <div className="stick" ref={pinRef}>
         <div className="topo-in wrap">
           <div className="topo-h">
             <span className="scrim" />
@@ -40,20 +30,19 @@ export default function Topo() {
               to <em>intelligence.</em>
             </h2>
           </div>
-          <div className="topo-b">
-            <div className="card stagecard" aria-live="polite">
-              <span className="mono">{current.label}</span>
-              <p style={{ marginTop: 6 }}>{current.body}</p>
-            </div>
-            <div className="rail" aria-label="From raw data to impact">
-              {STAGES.map((s, i) => (
-                <span key={s.rail} className={i === stage ? 'on' : undefined}>
-                  {s.rail}
-                </span>
-              ))}
-            </div>
+          {/* the card anchors to the free space between heading and pills, so it never meets the heading */}
+          <div className="cmid">
+            <CardStage states={STATES} fragments={fragments} stageRef={stageRef} />
+          </div>
+          <div className="rail" ref={railRef} aria-hidden="true">
+            {STATES.map((s, i) => (
+              <span key={s.id} className={i === 0 ? 'on' : undefined}>
+                {s.rail}
+              </span>
+            ))}
           </div>
         </div>
+        <p className="cs-live" ref={liveRef} aria-live="polite" />
       </div>
     </section>
   )

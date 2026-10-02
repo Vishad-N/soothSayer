@@ -1,3 +1,5 @@
+import TextHoverEffect from './TextHoverEffect.jsx'
+
 const FOOTER_LINKS = [
   ['#augent', 'Solutions'],
   ['#ind', 'Industries'],
@@ -28,8 +30,8 @@ export default function Footer() {
             <a href="#">LinkedIn</a>
           </span>
         </div>
-        <div className="wm" aria-hidden="true">
-          SOOTHSAYER
+        <div className="wm">
+          <TextHoverEffect text="Soothsayer" />
         </div>
       </div>
     </footer>
