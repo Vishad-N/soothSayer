@@ -41,23 +41,30 @@ function Eclipse({ active }) {
         const x = 400 + rx * Math.cos(a)
         const y = 400 + ry * Math.sin(a)
         return (
+          // Three nested groups so the static tilt (attr), hover fan-out and
+          // continuous spin each own a separate transform and don't override each other.
           <g key={i} transform={`rotate(${rot} 400 400)`}>
-            <ellipse
-              className={cx('orbit', i === active && 'on')}
-              cx="400"
-              cy="400"
-              rx={rx}
-              ry={ry}
-              strokeDasharray={i % 2 ? '3 8' : undefined}
-            />
-            <circle cx={x} cy={y} r="7" fill="#050B14" stroke="#1677FF" strokeWidth="1.3" />
-            <circle cx={x} cy={y} r="2.6" fill="#00D9FF" />
+            <g className="orb-fan" style={{ '--i': i - 2.5 }}>
+              <g className="orb" style={{ '--d': `${6 + i * 2}s`, '--dir': i % 2 ? 'alternate-reverse' : 'alternate' }}>
+                <ellipse
+                  className={cx('orbit', i === active && 'on')}
+                  cx="400"
+                  cy="400"
+                  rx={rx}
+                  ry={ry}
+                  strokeDasharray={i % 2 ? '3 8' : undefined}
+                />
+                <circle cx={x} cy={y} r="7" fill="#050B14" stroke="#1677FF" strokeWidth="1.3" />
+                <circle cx={x} cy={y} r="2.6" fill="#00D9FF" />
+              </g>
+            </g>
           </g>
         )
       })}
       <circle cx="400" cy="400" r="190" fill="#02050A" />
       <circle cx="400" cy="400" r="190" fill="none" stroke="#00D9FF" strokeWidth="1.3" opacity=".85" />
       <circle cx="400" cy="400" r="197" fill="none" stroke="#00D9FF" strokeWidth=".5" opacity=".4" />
+      <ellipse className="core-spin" cx="400" cy="400" rx="212" ry="205" fill="none" stroke="#00D9FF" strokeWidth=".8" strokeDasharray="2 14" opacity=".55" />
       {[
         ['RESPONSIBLE', 388],
         ['INTELLIGENCE', 424],

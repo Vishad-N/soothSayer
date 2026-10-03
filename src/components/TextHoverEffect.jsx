@@ -10,6 +10,9 @@ import { useRef, useState } from 'react'
 const MAIN = { x: 150, y: 28, length: 288 }
 const SUB = { x: 150, y: 68, length: 150 }
 
+// Wave surface: 75-unit period repeated across x -75..375 so a 75-unit slide loops seamlessly.
+const WAVE = `M-75 4 Q-56.25 -2 -37.5 4${Array.from({ length: 12 }, (_, i) => ` T${37.5 * i} 4`).join('')} V120 H-75 Z`
+
 function Line({ className, line, children, ...rest }) {
   return (
     <text className={className} x={line.x} y={line.y} textLength={line.length} lengthAdjust={line.adjust} aria-hidden="true" {...rest}>
@@ -64,6 +67,12 @@ export default function TextHoverEffect({ text, subText, className }) {
             {text}
           </Line>
         </mask>
+        {/* water level: a wavy-topped slab that rises on hover; the inner group drifts sideways */}
+        <mask id="theWater" maskUnits="userSpaceOnUse" x="-20" y="-20" width="340" height="124">
+          <g className="the-level">
+            <path className="the-wave" d={WAVE} fill="white" />
+          </g>
+        </mask>
       </defs>
       <g mask="url(#theHollow)">
         <Line className="the-base" line={main}>
@@ -76,6 +85,9 @@ export default function TextHoverEffect({ text, subText, className }) {
           {text}
         </Line>
       </g>
+      <Line className="the-fill" line={main} mask="url(#theWater)">
+        {text}
+      </Line>
       {subText && (
         <Line className="the-sub" line={sub}>
           {subText}
