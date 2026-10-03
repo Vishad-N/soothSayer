@@ -4,7 +4,7 @@ const FOOTER_LINKS = [
   ['#augent', 'Solutions'],
   ['#ind', 'Industries'],
   ['#hero', 'Company'],
-  ['#ins', 'Insights'],
+  ['#knowledge', 'Insights'],
   ['#cta', 'Contact'],
 ]
 
@@ -31,7 +31,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="wm">
-          <TextHoverEffect text="Soothsayer" />
+          <TextHoverEffect text="Soothsayer" subText="Analytics" />
         </div>
       </div>
     </footer>

@@ -1,12 +1,30 @@
 import { useRef, useState } from 'react'
 
-// Outlined wordmark that draws itself in on load, then reveals a glowing brand-colour
-// gradient stroke under the cursor. The mask follows the pointer via direct attribute
-// writes, so mouse movement never triggers a React re-render.
-export default function TextHoverEffect({ text, className }) {
+// Hollow outlined wordmark: it draws itself in on load; hovering reveals a glowing brand-colour
+// gradient stroke under the cursor and fades in the smaller solid-white `subText` line beneath. The mask moves via direct attribute writes, so pointer
+// movement never triggers a React re-render.
+//
+// Hollow without internal lines: variable-font glyphs are built from overlapping contours, so a
+// plain stroke also traces shapes inside the letters. Instead every stroke is masked by the
+// inverse of the filled text (the union silhouette), which keeps only the outer edge.
+const MAIN = { x: 150, y: 28, length: 288 }
+const SUB = { x: 150, y: 68, length: 150 }
+
+function Line({ className, line, children, ...rest }) {
+  return (
+    <text className={className} x={line.x} y={line.y} textLength={line.length} lengthAdjust={line.adjust} aria-hidden="true" {...rest}>
+      {children}
+    </text>
+  )
+}
+
+export default function TextHoverEffect({ text, subText, className }) {
   const svgRef = useRef(null)
   const maskRef = useRef(null)
   const [hovered, setHovered] = useState(false)
+
+  const main = { ...MAIN, adjust: 'spacingAndGlyphs' }
+  const sub = { ...SUB, adjust: 'spacing' }
 
   const onPointerMove = (e) => {
     const rect = svgRef.current.getBoundingClientRect()
@@ -18,9 +36,9 @@ export default function TextHoverEffect({ text, className }) {
     <svg
       ref={svgRef}
       className={`the${hovered ? ' on' : ''}${className ? ` ${className}` : ''}`}
-      viewBox="0 0 300 56"
+      viewBox="0 0 300 84"
       role="img"
-      aria-label={text}
+      aria-label={subText ? `${text} ${subText}` : text}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
       onPointerMove={onPointerMove}
@@ -39,26 +57,30 @@ export default function TextHoverEffect({ text, className }) {
         <mask id="theMask">
           <rect x="0" y="0" width="100%" height="100%" fill="url(#theReveal)" />
         </mask>
+        {/* everything outside the letters stays visible; the letters themselves are cut out */}
+        <mask id="theHollow" maskUnits="userSpaceOnUse" x="-20" y="-20" width="340" height="124">
+          <rect x="-20" y="-20" width="340" height="124" fill="white" />
+          <Line className="the-hole" line={main}>
+            {text}
+          </Line>
+        </mask>
       </defs>
-      {/* textLength pins the word to the viewBox width, so it always fits whatever font loads */}
-      <text className="the-base" x="50%" y="50%" textLength="288" lengthAdjust="spacingAndGlyphs" aria-hidden="true">
-        {text}
-      </text>
-      <text className="the-draw" x="50%" y="50%" textLength="288" lengthAdjust="spacingAndGlyphs" aria-hidden="true">
-        {text}
-      </text>
-      <text
-        className="the-glow"
-        x="50%"
-        y="50%"
-        textLength="288"
-        lengthAdjust="spacingAndGlyphs"
-        stroke="url(#theGradient)"
-        mask="url(#theMask)"
-        aria-hidden="true"
-      >
-        {text}
-      </text>
+      <g mask="url(#theHollow)">
+        <Line className="the-base" line={main}>
+          {text}
+        </Line>
+        <Line className="the-draw" line={main}>
+          {text}
+        </Line>
+        <Line className="the-glow" line={main} stroke="url(#theGradient)" mask="url(#theMask)">
+          {text}
+        </Line>
+      </g>
+      {subText && (
+        <Line className="the-sub" line={sub}>
+          {subText}
+        </Line>
+      )}
     </svg>
   )
 }

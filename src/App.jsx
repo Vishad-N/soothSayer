@@ -8,7 +8,7 @@ import Docs from './sections/Docs.jsx'
 import Hero from './sections/Hero.jsx'
 import Impact from './sections/Impact.jsx'
 import Industries from './sections/Industries.jsx'
-import Insights from './sections/Insights.jsx'
+import Knowledge from './sections/Knowledge.jsx'
 import Proof from './sections/Proof.jsx'
 import Question from './sections/Question.jsx'
 import Responsible from './sections/Responsible.jsx'
@@ -36,7 +36,7 @@ export default function App() {
         <Strategy />
         <Responsible />
         <Proof />
-        <Insights />
+        <Knowledge />
         <Cta />
       </main>
       <Footer />

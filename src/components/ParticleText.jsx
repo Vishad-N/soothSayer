@@ -4,6 +4,30 @@ import { cx, prefersReducedMotion } from '../lib/utils.js'
 
 const SETTLE_OPTIONS = { threshold: 0.4 }
 
+// Splits text into words (kept unbreakable) and whitespace, one span per character.
+function renderWords(text, offsets) {
+  let i = 0
+  const glyph = (ch) => {
+    const n = i++
+    return (
+      <span
+        key={n}
+        aria-hidden="true"
+        style={{ '--i': n, '--dx': `${offsets[n].dx}px`, '--dy': `${offsets[n].dy}px` }}
+      >
+        {ch}
+      </span>
+    )
+  }
+  return text.split(/(\s+)/).map((part, k) =>
+    /^\s+$/.test(part) ? [...part].map(glyph) : (
+      <span className="pw" key={`w${k}`}>
+        {[...part].map(glyph)}
+      </span>
+    ),
+  )
+}
+
 // Letters start scattered and drift into place when the text enters view.
 // `scatterOnCardHover` re-scatters briefly whenever the enclosing .card is hovered.
 export default function ParticleText({
@@ -51,15 +75,7 @@ export default function ParticleText({
       style={delay ? { ...style, '--d': delay } : style}
       aria-label={text}
     >
-      {[...text].map((ch, i) => (
-        <span
-          key={i}
-          aria-hidden="true"
-          style={{ '--i': i, '--dx': `${offsets[i].dx}px`, '--dy': `${offsets[i].dy}px` }}
-        >
-          {ch}
-        </span>
-      ))}
+      {renderWords(text, offsets)}
     </Tag>
   )
 }

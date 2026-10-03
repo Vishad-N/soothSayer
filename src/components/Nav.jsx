@@ -6,7 +6,7 @@ const LINKS = [
   ['#ind', 'Industries'],
   ['#impact', 'Impact'],
   ['#augent', 'Intelligence'],
-  ['#ins', 'Insights'],
+  ['#knowledge', 'Insights'],
 ]
 
 export default function Nav() {
