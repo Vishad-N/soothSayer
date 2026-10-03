@@ -59,7 +59,8 @@ a.card:hover .arr,.card.hv:hover .arr{transform:translateX(4px)}
 .nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;width:min(1180px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;padding:9px 10px 9px 26px;border-radius:999px;border:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
 .nav.sc{background:rgba(8,21,38,.74);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--struct)}
 .logo{font-family:var(--display);font-weight:700;letter-spacing:.2em;font-size:14px;display:flex;align-items:center;gap:12px}
-.logo b{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.logo img{display:block;height:34px;width:auto}
+.flogo{display:block;height:52px;width:auto;margin:48px auto 0}
 .nav nav{display:flex;gap:28px}
 .nav nav a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tx2);transition:color .25s}
 .nav nav a:hover{color:var(--ice)}

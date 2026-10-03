@@ -30,8 +30,7 @@ export default function Nav() {
       <div id="prog" ref={progressRef} aria-hidden="true" />
       <header className={cx('nav', scrolled && 'sc')} id="nav">
         <a href="#hero" className="logo" aria-label="Soothsayer Analytics home">
-          <b />
-          SOOTHSAYER
+          <img src="/logo.svg" alt="Soothsayer Analytics" width="116" height="34" />
         </a>
         <nav aria-label="Primary">
           {LINKS.map(([href, label]) => (

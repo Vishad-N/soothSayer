@@ -12,6 +12,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap">
+        <img className="flogo" src="/logo.svg" alt="Soothsayer Analytics" width="176" height="52" />
         <nav className="fnav" aria-label="Footer">
           {FOOTER_LINKS.map(([href, label]) => (
             <a key={label} href={href}>
