@@ -8,12 +8,12 @@ export default function Cta() {
       <svg className="dec sig" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <linearGradient id="sg1" x1="0" x2="1">
-            <stop offset="0" stopColor="#1677FF" stopOpacity=".1" />
+            <stop offset="0" stopColor="#9AA8B7" stopOpacity=".1" />
             <stop offset=".4" stopColor="#00D9FF" />
             <stop offset="1" stopColor="#00D9FF" />
           </linearGradient>
         </defs>
-        <g fill="none" stroke="#23405F" vectorEffect="non-scaling-stroke">
+        <g fill="none" stroke="rgba(244,248,252,.14)" vectorEffect="non-scaling-stroke">
           <ellipse cx="720" cy="1200" rx="1100" ry="720" vectorEffect="non-scaling-stroke" opacity=".6" />
           <ellipse cx="720" cy="1300" rx="1400" ry="800" vectorEffect="non-scaling-stroke" opacity=".35" />
         </g>

@@ -89,7 +89,7 @@ export default function IntelligenceField() {
       for (let s = 0; s <= 10; s++) {
         const u = s / 10
         const e = Math.exp(-Math.pow(u - xc, 2) / (2 * Math.pow(xw / 2.4, 2)))
-        g.addColorStop(u, `rgba(22,119,255,${e * a})`)
+        g.addColorStop(u, `rgba(154,168,183,${e * a})`)
         gc.addColorStop(u, `rgba(0,217,255,${Math.min(1, e * 1.3) * (0.35 + 0.65 * r)})`)
       }
       const route = (u) => yc * H + Math.sin(u * 2.6 + 0.8 + t * 0.1) * H * 0.09 + (u - 0.5) * H * 0.1
@@ -133,7 +133,7 @@ export default function IntelligenceField() {
         const px = u * W
         const y = yAt(p.i, p.i / (N - 1), u, px)
         const e = Math.exp(-Math.pow(u - xc, 2) / (2 * Math.pow(xw / 2.4, 2)))
-        ctx.fillStyle = p.hot ? `rgba(0,217,255,${0.8 * e * a})` : `rgba(155,243,255,${0.5 * e * a})`
+        ctx.fillStyle = p.hot ? `rgba(0,217,255,${0.8 * e * a})` : `rgba(244,248,252,${0.5 * e * a})`
         ctx.beginPath()
         ctx.arc(px, y, p.r, 0, 6.283)
         ctx.fill()

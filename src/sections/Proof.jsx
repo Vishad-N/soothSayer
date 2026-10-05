@@ -17,16 +17,16 @@ export default function Proof() {
       <svg className="dec proof-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <linearGradient id="pg" x1="0" x2="1">
-            <stop offset="0" stopColor="#0C2140" />
-            <stop offset="1" stopColor="#081526" />
+            <stop offset="0" stopColor="#0A1018" />
+            <stop offset="1" stopColor="#050B14" />
           </linearGradient>
         </defs>
         <rect width="1600" height="900" fill="url(#pg)" />
         {WAVES.map((w, i) => (
-          <path key={i} d={w.d} fill="none" stroke="#1677FF" strokeWidth="1" opacity={w.opacity} />
+          <path key={i} d={w.d} fill="none" stroke="#9AA8B7" strokeWidth="1" opacity={w.opacity} />
         ))}
         {[380, 560, 760].map((r, i) => (
-          <circle key={r} cx="1280" cy="200" r={r} fill="none" stroke="#23405F" opacity={0.5 - i * 0.12} />
+          <circle key={r} cx="1280" cy="200" r={r} fill="none" stroke="rgba(244,248,252,.14)" opacity={0.5 - i * 0.12} />
         ))}
       </svg>
       <div className="wrap" style={{ width: '100%' }}>

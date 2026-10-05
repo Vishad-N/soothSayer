@@ -54,7 +54,7 @@ function Eclipse({ active }) {
                   ry={ry}
                   strokeDasharray={i % 2 ? '3 8' : undefined}
                 />
-                <circle cx={x} cy={y} r="7" fill="#050B14" stroke="#1677FF" strokeWidth="1.3" />
+                <circle cx={x} cy={y} r="7" fill="#050B14" stroke="rgba(244,248,252,.28)" strokeWidth="1.3" />
                 <circle cx={x} cy={y} r="2.6" fill="#00D9FF" />
               </g>
             </g>

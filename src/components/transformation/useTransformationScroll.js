@@ -11,8 +11,8 @@ const PIN_VH = 4.5
 const HOLD = 0.4
 
 // Card pressure states: rest → inflate → tension. The shard layer is frozen at TENSION.
-const REST = { scaleX: 1, scaleY: 1, y: 0, borderRadius: 26, borderColor: '#23405f', boxShadow: '0 24px 60px rgba(0,0,0,.35), 0 0 0 rgba(0,217,255,0)' }
-const INFLATED = { scaleX: 1.06, scaleY: 1.12, y: -6, borderRadius: 34, borderColor: '#2f6bc4', boxShadow: '0 34px 84px rgba(0,0,0,.5), 0 0 40px rgba(0,217,255,.18)' }
+const REST = { scaleX: 1, scaleY: 1, y: 0, borderRadius: 26, borderColor: 'rgba(244,248,252,0.10)', boxShadow: '0 24px 60px rgba(0,0,0,.35)' }
+const INFLATED = { scaleX: 1.06, scaleY: 1.12, y: -6, borderRadius: 34, borderColor: 'rgba(244,248,252,0.14)', boxShadow: '0 34px 84px rgba(0,0,0,.5)' }
 const TENSION = { scaleX: 1.07, scaleY: 1.14, y: -7, borderRadius: 34, borderColor: '#00d9ff', boxShadow: '0 38px 96px rgba(0,0,0,.55), 0 0 56px rgba(0,217,255,.4)' }
 const FINAL = { scaleX: 1.04, scaleY: 1.07, y: -4, borderRadius: 32, borderColor: '#00d9ff', boxShadow: '0 34px 90px rgba(0,0,0,.5), 0 0 64px rgba(0,217,255,.35)' }
 

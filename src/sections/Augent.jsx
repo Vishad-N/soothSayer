@@ -40,7 +40,7 @@ function Tunnel() {
           <stop offset="1" stopColor="#00D9FF" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <g stroke="#23405F" strokeWidth=".8" fill="none">
+      <g stroke="rgba(244,248,252,.14)" strokeWidth=".8" fill="none">
         {RAILS.map((d, i) => (
           <path key={i} d={d} />
         ))}
@@ -53,8 +53,8 @@ function Tunnel() {
           <g key={label} className="rg">
             <ellipse {...ellipse} fill={`rgba(8,21,38,${i * 0.07})`} />
             <ellipse {...ellipse} className="ring" />
-            <rect x={tx - 4} y={ty - 9} width={label.length * 7 + 16} height="18" rx="9" fill="#050B14" stroke="#1677FF" />
-            <text x={tx + 4} y={ty + 3.6} fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#9BF3FF" letterSpacing="1">
+            <rect x={tx - 4} y={ty - 9} width={label.length * 7 + 16} height="18" rx="9" fill="#050B14" stroke="rgba(244,248,252,.14)" />
+            <text x={tx + 4} y={ty + 3.6} fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#9AA8B7" letterSpacing="1">
               {label}
             </text>
           </g>
@@ -65,7 +65,7 @@ function Tunnel() {
         id="tpath"
         d="M 30 300 C 90 90, 250 70, 336 288"
         fill="none"
-        stroke="#1677FF"
+        stroke="rgba(244,248,252,.28)"
         strokeWidth=".8"
         strokeDasharray="3 6"
         opacity=".5"

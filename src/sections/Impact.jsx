@@ -27,7 +27,7 @@ export default function Impact() {
   return (
     <section className="sec" id="impact" aria-labelledby="h-i">
       <svg className="dec arcs" viewBox="0 0 1600 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g fill="none" stroke="#23405F" strokeWidth="1">
+        <g fill="none" stroke="rgba(11,18,32,.26)" strokeWidth="1">
           <circle cx="800" cy="700" r="560" />
           <circle cx="800" cy="700" r="700" strokeDasharray="2 10" />
           <circle cx="800" cy="700" r="860" opacity=".6" />
@@ -59,7 +59,7 @@ export default function Impact() {
             <Counter to={10} suffix="×" />
             <span
               className="mono"
-              style={{ fontSize: '.14em', letterSpacing: '.2em', marginLeft: 14, color: 'var(--ice)' }}
+              style={{ fontSize: '.14em', letterSpacing: '.2em', marginLeft: 14, color: 'var(--proof-mute)' }}
             >
               ROI
             </span>

@@ -20,9 +20,9 @@ export default function SpectralRibbon() {
       <svg viewBox="0 0 1600 150" preserveAspectRatio="none">
         <defs>
           <linearGradient id={gradientId} x1="0" x2="1">
-            <stop offset="0" stopColor="#1677FF" stopOpacity=".6" />
+            <stop offset="0" stopColor="#9AA8B7" stopOpacity=".6" />
             <stop offset=".5" stopColor="#00D9FF" stopOpacity=".9" />
-            <stop offset="1" stopColor="#9BF3FF" stopOpacity=".2" />
+            <stop offset="1" stopColor="#F4F8FC" stopOpacity=".2" />
           </linearGradient>
         </defs>
         {STRANDS.map((s, i) => (

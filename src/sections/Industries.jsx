@@ -110,7 +110,7 @@ export default function Industries() {
           <div className={cx('card icard', active >= 0 && 'show')} role="status" style={placement?.style}>
             {shown >= 0 && (
               <>
-                <span className="mono" style={{ color: 'var(--cyan)' }}>
+                <span className="mono" style={{ color: 'var(--ice)' }}>
                   0{shown + 1} · {INDUSTRIES[shown][0]}
                 </span>
                 <h3>Intelligence in {INDUSTRIES[shown][0].toLowerCase()}</h3>

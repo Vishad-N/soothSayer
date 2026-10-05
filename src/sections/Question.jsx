@@ -24,8 +24,8 @@ export default function Question() {
       <svg className="dec q-art" viewBox="0 0 1600 700" aria-hidden="true">
         <defs>
           <linearGradient id="qg" x1="0" x2="1">
-            <stop offset="0" stopColor="#1677FF" stopOpacity=".05" />
-            <stop offset=".5" stopColor="#1677FF" stopOpacity=".3" />
+            <stop offset="0" stopColor="#9AA8B7" stopOpacity=".05" />
+            <stop offset=".5" stopColor="#9AA8B7" stopOpacity=".2" />
             <stop offset="1" stopColor="#00D9FF" stopOpacity=".18" />
           </linearGradient>
         </defs>
@@ -34,7 +34,7 @@ export default function Question() {
             key={i}
             d={w.d}
             fill="url(#qg)"
-            stroke="#1677FF"
+            stroke="rgba(244,248,252,.28)"
             strokeWidth="1"
             strokeOpacity={w.strokeOpacity}
             opacity={w.opacity}

@@ -52,7 +52,7 @@ function TopicDisc() {
       <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <radialGradient id="ig" cx=".5" cy=".5" r=".65">
-            <stop offset="0" stopColor="#162B45" />
+            <stop offset="0" stopColor="#121A24" />
             <stop offset="1" stopColor="#050B14" />
           </radialGradient>
           <filter id="rip" x="-10%" y="-10%" width="120%" height="120%">
@@ -68,7 +68,7 @@ function TopicDisc() {
           </filter>
         </defs>
         <rect width="400" height="400" fill="url(#ig)" />
-        <g fill="none" stroke="#1677FF" strokeWidth="1" filter="url(#rip)">
+        <g fill="none" stroke="rgba(244,248,252,.28)" strokeWidth="1" filter="url(#rip)">
           {CONTOURS.map((c, i) => (
             <ellipse
               key={i}
@@ -81,7 +81,7 @@ function TopicDisc() {
             />
           ))}
           {DOTS.map((d, i) => (
-            <circle key={`d${i}`} cx={d.cx} cy={d.cy} r={d.r} fill="#9BF3FF" stroke="none" opacity={d.opacity} />
+            <circle key={`d${i}`} cx={d.cx} cy={d.cy} r={d.r} fill="#F4F8FC" stroke="none" opacity={d.opacity} />
           ))}
           <path d="M-10 320 C 100 260, 160 330, 250 220 S 360 120, 420 90" stroke="#00D9FF" strokeWidth="1.6" opacity=".9" />
           <circle cx="270" cy="170" r="4" fill="#00D9FF" />
@@ -105,7 +105,7 @@ export default function Insights() {
           <Reveal as="a" href="#" className="circ" aria-label="Topic: Enterprise AI, from pilot to production">
             <TopicDisc />
             <div className="ct">
-              <span className="mono" style={{ color: 'var(--cyan)' }}>
+              <span className="mono" style={{ color: 'var(--ice)' }}>
                 Topic · Enterprise AI
               </span>
               <h3>From pilot to production</h3>
@@ -127,7 +127,7 @@ export default function Insights() {
             </p>
           </Reveal>
           <a href="#" className="fp">
-            AI strategy · Responsible AI <i style={{ fontStyle: 'normal', color: 'var(--cyan)' }}>→</i>
+            AI strategy · Responsible AI <i style={{ fontStyle: 'normal', color: 'var(--tx)' }}>→</i>
           </a>
         </div>
       </div>

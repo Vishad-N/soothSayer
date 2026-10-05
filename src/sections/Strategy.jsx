@@ -99,7 +99,7 @@ export default function Strategy() {
           <svg viewBox={geometry.viewBox} aria-hidden="true">
             <defs>
               <linearGradient id="bg2" x1="0" x2="1">
-                <stop offset="0" stopColor="#1677FF" />
+                <stop offset="0" stopColor="#9AA8B7" />
                 <stop offset="1" stopColor="#00D9FF" />
               </linearGradient>
             </defs>

@@ -3,7 +3,7 @@
 > SkillGod manages the memory block below.
 
 <!-- SKILLGOD:START v1.1 -->
-# SkillGod Project Memory (auto-generated — do not edit; updated 2026-10-03 18:43)
+# SkillGod Project Memory (auto-generated — do not edit; updated 2026-10-05 18:24)
 
 # SkillGod Active
 
@@ -22,20 +22,20 @@ After completing **meaningful** work (decisions, architecture, non-obvious fixes
 ## SkillGod health
 - version: 1.0.1+794a995
 - project_id: `visha-90fc8883`
-- last inject: 2026-10-03T18:42:55 (runtime)
+- last inject: 2026-10-05T18:24:20 (runtime)
 - last capture: never (-)
 - markers: SKILLGOD:START v1.1
 
 ## Project memory
 
 ## Decisions
+- decision: fee deposit slips live in Setting fees.depositSlips (cash/cheque/DD, each payment id once, amount summed from live Payment rows). PDF via buildSimplePdf. Store vendor mas
+- {"stdout": "== references to Trade Bit left in soothsayer (excluding node_modules/dist/.git/.skillgod):\n./.agent/rules/skillgod-memory.md:34:- {\"stdout\": \"948: * @deprecated Us
+- decision: subject categories/types and leave-type marks percent live in Setting JSON (academics.subjectCategories, academics.subjectTypes, academics.leaveMarksPercent, academics.su
 - {"filePath": "c:\\Users\\visha\\OneDrive\\Desktop\\work\\soothsayer-web\\src\\styles\\global.css", "oldString": ".the.on text.the-sub{opacity:1;transform:none}\n", "newString": ".t
 - {"filePath": "c:\\Users\\visha\\OneDrive\\Desktop\\work\\soothsayer-web\\src\\styles\\global.css", "oldString": ".the.on{filter:drop-shadow(0 0 6px rgba(0,217,255,.45))}", "newStri
 - {"filePath": "c:\\Users\\visha\\OneDrive\\Desktop\\work\\soothsayer-web\\src\\styles\\global.css", "oldString": ".the-base{stroke:rgba(154,168,183,.5);opacity:0;transition:opacity 
 - {"stdout": "948: * @deprecated Use `rolldownOptions` instead.\n952: * @deprecated Use `rolldownOptions` instead.\n954: rollupOptions?: Omit<RolldownOptions, \"input\" | \"logLevel\
-- {"filePath": "c:\\Users\\visha\\OneDrive\\Desktop\\work\\soothsayer-web\\src\\components\\transformation\\useTransformationScroll.js", "oldString": " const build = (reduced) => {",
-- {"filePath": "C:\\Users\\visha\\Downloads\\design-studio-homepage (1)\\design-studio-homepage\\react-app\\src\\components\\Hero.jsx", "oldString": " design interiors<br />that hold
-- {"stdout": " </div>\n </div>\n </section>\n\n {/* STUDIO GALLERY */}\n <section className=\"gallery wrap\">\n <div className=\"section-head\">\n
 
 ## Notes
 
