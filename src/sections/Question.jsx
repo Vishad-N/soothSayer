@@ -23,10 +23,15 @@ export default function Question() {
     <section className="sec q-wrap" id="question" aria-labelledby="h-q">
       <svg className="dec q-art" viewBox="0 0 1600 700" aria-hidden="true">
         <defs>
-          <linearGradient id="qg" x1="0" x2="1">
-            <stop offset="0" stopColor="#9AA8B7" stopOpacity=".05" />
-            <stop offset=".5" stopColor="#9AA8B7" stopOpacity=".2" />
-            <stop offset="1" stopColor="#00D9FF" stopOpacity=".18" />
+          <linearGradient id="qg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#9AA8B7" stopOpacity=".07" />
+            <stop offset=".55" stopColor="#9AA8B7" stopOpacity=".02" />
+            <stop offset="1" stopColor="#9AA8B7" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="qline" x1="0" x2="1">
+            <stop offset="0" stopColor="#F4F8FC" stopOpacity=".05" />
+            <stop offset=".5" stopColor="#F4F8FC" stopOpacity=".34" />
+            <stop offset="1" stopColor="#00D9FF" stopOpacity=".5" />
           </linearGradient>
         </defs>
         {WAVES.map((w, i) => (
@@ -34,10 +39,10 @@ export default function Question() {
             key={i}
             d={w.d}
             fill="url(#qg)"
-            stroke="rgba(244,248,252,.28)"
+            stroke="url(#qline)"
             strokeWidth="1"
             strokeOpacity={w.strokeOpacity}
-            opacity={w.opacity}
+            opacity={1 - i * 0.06}
           />
         ))}
       </svg>

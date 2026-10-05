@@ -54,7 +54,7 @@ a.card:hover .arr,.card.hv:hover .arr{transform:translateX(4px)}
 .chip{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:5px 11px;color:var(--tx2)}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
-.scrim{position:absolute;inset:-60px -80px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(5,11,20,.92) 0,rgba(5,11,20,.82) 45%,rgba(5,11,20,0) 78%)}
+.scrim{position:absolute;inset:-60px -80px;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(5,11,20,.9) 0,rgba(5,11,20,.7) 45%,rgba(5,11,20,0) 100%)}
 
 /* nav */
 #prog{position:fixed;left:0;top:0;height:2px;width:100%;z-index:120;transform-origin:0 50%;transform:scaleX(0);background:var(--cyan)}

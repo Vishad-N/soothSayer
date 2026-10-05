@@ -1,11 +1,11 @@
 {
-  "ts": 1791202765.6985502,
-  "iso": "2026-10-05T17:49:25",
+  "ts": 1791206722.4007928,
+  "iso": "2026-10-05T18:55:22",
   "event": "pre_tool",
   "channel": "hook",
   "ok": true,
   "detail": "inject chars=9987",
   "project_id": "visha-90fc8883",
   "cwd": "C:\\Users\\visha\\OneDrive\\Desktop\\work\\soothsayer-web\\src",
-  "pid": 39460
+  "pid": 36948
 }
