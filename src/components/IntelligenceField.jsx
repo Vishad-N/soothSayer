@@ -6,7 +6,7 @@ import { createRng, lerp, prefersReducedMotion, smoothstep } from '../lib/utils.
 const FIELD_STOPS = [
   ['#hero', 0.3, 0.85, 0.15, 0.3, 0.95, 0.75, 0.5, 0.52, 0.9],
   ['#question', 0.5, 0.6, 0.3, 0.1, 0.5, 0.5, 0.9, 0.5, 0.85],
-  // #topo is pinned for 4.5 viewport heights (+ a hold); fractions mark the six card stages
+  // #topo is pinned for 4 viewport heights (+ a hold); fractions mark the six network stages
   ['#topo', 0.09, 0.95, 0.05, 0, 0.95, 0.5, 1.4, 0.68, 0.52],
   ['#topo', 0.142, 0.95, 0.05, 0, 0.95, 0.5, 1.4, 0.68, 0.52],
   ['#topo', 0.27, 0.7, 0.3, 0.12, 0.95, 0.5, 1.4, 0.68, 0.52],
